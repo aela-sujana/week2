@@ -9,7 +9,7 @@ driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
 
 try:
-    driver.get("http://localhost:31536")  # Replace with correct port
+    driver.get("http://localhost:31096")  # Replace with correct port
 
     # Fill the form
     wait.until(EC.presence_of_element_located((By.NAME, "full_name"))).send_keys("Test User")
@@ -28,7 +28,7 @@ try:
     actions.move_to_element(submit_button).click().perform()
 
     # Wait for some confirmation or just sleep
-    wait.until(EC.url_changes("http://localhost:31536"))  # Optional: wait until page redirects
+    wait.until(EC.url_changes("http://localhost:31096"))  # Optional: wait until page redirects
     print("Test Completed Successfully!")
 
 finally:
